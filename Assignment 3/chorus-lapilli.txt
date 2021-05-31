@@ -1,0 +1,33 @@
+Set up:
+* To set the repo up, I created a new repo with the command:
+  npx create-react-app chorus-lapilli
+* I deleted everything in the src folder.
+* I copied index.js and index.css from the tic-tac-toe game into src.
+* I used npm start and went to http://localhost:3000/ to see the game.
+
+Modifications:
+* My first modification was to prevent a fourth piece.
+* I began by modifying handleClick().
+* First, I isolated the standard tic-tac-toe logic.
+* I made it so that the game was normal if stepNumber < 6, (X's fourth move).
+* I added a selectedSquare variable to the state. This is normally null.
+* After 6 moves, the user has to select a piece before moving it.
+* This updates selectedSquare. Then, if selectedSquare !== null,
+the user can choose a second square to move to, if it's null.
+* Now, I tested out the game. The piece could be moved anywhere.
+* I limited movement by adding a checkIfEligibleSquare() function.
+This function takes in the old location and new location. Allowed locations
+are hard programmed into the function. An array is filled with legal locations
+and if this array .includes() the new location, the function returns true.
+* Using this function, I limited movement to only legal locations.
+* The game was working, and the first requirement of the game was met.
+* Now, to do the second, and make sure the middle square was vacated,
+I added logic before everything before, but only in the stepNumber > 6
+section. This checked if the middle square was occupied by the current player.
+If it was, the function would return early. They have to move that piece.
+* The game was working correctly, but I noticed a bug where a piece
+could be moved to a location marked by the opponent. I fixed this by
+fixing the logic before the if statements dealing with selecting pieces.
+* The game was working correctly now. I tested it by trying to move
+pieces to illegal locations, moving the opponents pieces, etc.
+I didn't find any bugs.

@@ -1,0 +1,2 @@
+In the top left box, I can see a graphic representation of the repository. This commit was a merge. In the middle column, I can see the authors of the commits. This commit was authored by Glenn Morris. In the right column, I can see the date and time of the commit, which was 2020-10-17 09:48:54.
+The lower half of the window is split into two parts. On the left, I can see additional information about the merge, like git diff information. This can be changed with a couple of options. On the right there are options to explore the repository at this point in time.

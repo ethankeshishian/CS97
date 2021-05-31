@@ -1,0 +1,9 @@
+#!/bin/sh
+goodnum=$1
+badnum=$2
+infile=$3
+total= $goodnum + $badnum
+good=$(shuf -r -n $goodnum /usr/share/dict/linux.words)
+bad=$(shuf -r -n $badnum $infile)
+allwords=$(shuf -r -n $total)
+echo "${allwords}"

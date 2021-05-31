@@ -1,0 +1,10 @@
+"""
+Output lines selected randomly from a file
+
+$Id: shuf.py,v 1.0 2020/010/23 23:55:00 Ethan $
+"""
+
+
+import random, sys, string, argparse
+
+parser = argparse.ArgumentParser(description='Process some integers.')

@@ -1,0 +1,90 @@
+Adding check in makefile:
+
+  I added a check that makes sure the output of randall.c is equal to
+  1000 bytes when 1000 is inputted. The exit code depends on the
+  result of the script.
+
+Splitting randall implementation:
+
+  First, I made the new files, created include guards, then copied the
+  hardware and software implementations to their new .c files. I
+  copied these into the .h files, and replaced the implementations
+  with declarations. I also removed the "static" keywords because the
+  functions were not longer static. Then, I copied the #include files
+  over, and removed the unnecessary ones. I ran "gcc file_name.c" to
+  make sure the files worked. There were some libraries I had
+  forgotten to include, which I fixed. I knew it was working when I
+  saw an error saying the main function was missing. For output.c and
+  output.h, I followed a similar process as before. I copied the
+  writebytes() function and created a new function for error
+  handling. I made a couple mistakes with this, because I had to get
+  used to using char pointers instead of strings and strcomp. The
+  options.c and options.h files would be empty for now. I added
+  include guards to options.h. Finally, I updated the makefile so that
+  compiling linked all the files. I tested it and made sure the output
+  was correct.
+
+Options parsing:
+
+  My next step was to implement options parsing, for -i, -o, and the
+  standard input. I did this altogether in one step, in a function
+  called handle_input() in the options.c and options.h files. I used
+  the getopt() function in a while loop and a switch statement. I made
+  sure all the options were only given once. I ran into a couple
+  problems here; for example, I tried to make switch statements with
+  strings when that isn't possible, so I used if statements
+  instead. Then, I added getter functions to the file, to make getting
+  the results of handle_input() easier. I followed this by calling
+  this function from the main function, using if statements to
+  determine which output to proceed with.
+
+Options implementations:
+
+  I moved on to implementing what to do with the program once the
+  inputs had been determined. First I had to do some more
+  refactoring. Then, I split up the given code that determines which
+  implementation to use based on inputs, using some if statements. I
+  implemented the mrand48_r function in a new file mrand.c with a
+  header file, mrand.h. I made sure to seed it in the initialize
+  function.  I implemented the ability to pass the string contained in
+  -i as an argument to the rand64 function. This way, the functions
+  could still be defined once, then modified from my if
+  statements. The last option I worked on was implementing the -o N
+  option. I implemented this with the write and malloc functions, and
+  two for loops. I initially implemented it incorrectly, but
+  fortunately it was a quick fix. I was experiencing a bug where some
+  of my output was all zeroes, which was caused by the wrong
+  incrementing number. I replaced this with the sizeof() function to
+  make sure it was correct.
+
+Make check additions:
+
+  Before adding checks to my Makefile, I made sure to do some testing
+  by hand with different optiosn. To add to my make check checks, I
+  followed a style similar to what I used for my first check, but
+  called ./randall with different options to make sure all my options
+  were working correctly. These all passed on lnxsrv11.
+
+Timing functions:
+
+  I ran the test with multiple combinations, using the given
+  number. When run with only the -i flag, the write implementation is
+  fastest, and the hw implementation is slowest, with the sw
+  implementation in the middle. It took about 4 seconds for the hw
+  implementation, 2.5 seconds for the sw implementation, and 1.5
+  seconds for the write implementation. Then I added the -i N
+  flag. Varying the value of N had no effect on time. The rankings
+  were the same this time, but each sped up.  It took about 2.8
+  seconds for the hw implementation, 1.3 seconds for the sw
+  implementation, and .5 seconds for the write implementation. One
+  interesting observation is that most had little sys time, except for
+  the sw implementation, which spent a good portion of time in
+  sys. Using the -i /dev/urandom worked, but using -i /dev/random
+  took over a minute, with almost 45 seconds in sys.
+
+Conclusion:
+
+  To complete the project, I went through all my files one more time
+  and made sure I wasn't importing anything that didn't need to be
+  imported, and made sure all private components had the "static"
+  keyword.

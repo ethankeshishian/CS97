@@ -1,0 +1,31 @@
+1.1:
+  C-s can be used to search for the words. M-< took me back to the start of the file.
+  I used C-p, C-n, C-b, and C-f for up, down, left, and right respectively.
+1.4:
+  There were 5 "-->" symbols that were replaced with "--&gt". There was a sixth one which was the one I added, which wasn't replaced.
+  There were 6 occurances of "<ol> that were replaced with "<oL>".
+1.5:
+  1. Using 'which mv' and 'which sh' shows 'sh' in /usr/bin/sh and 'mv' in /usr/local/cs/bin/mv.
+  2. Using ls | grep ^r%, I found ar, pr, tr. 
+     'man ar' says 'ar' is 'The GNU ar program creates, modifies, and extracts from archives.
+     'pr' is used to make pages and columns for printing.
+     'tr' translates and deletes characters.
+  3. In reality, /etc/alternatives/emacs is executed.
+  4. The version in /usr/bin/gcc is 4.8.5. The plain version is located at /usr/local/cs/bin and is version 10.2.0. This is version installed for the local user
+  5. u+sx adds permissions to the user who owns the file to execute and set the user ID on execution. o-w removes permissions two write from other users not in the group.
+  6. find -maxdepth 1 -type d -mtime -28 returns:
+    .
+    ./bin
+    ./ocaml-4.11.1
+    ./bash-5.0.18
+    ./grep-3.5
+    ./Python-2.7.18
+    ./Python-3.9.0
+  7. ls -al | grep -Fc -- '->' returns 280 lines.
+  8. Using 'ls -alt' the oldest file is librom1394.so.0.3.0.
+  9. man locale shows /usr/lib/locale/locale-archive and /usr/share/i18n/locales.
+ 10. downcase-dwim, downcase-region, and downcase-word.
+ 11. C-M-r is a backwards regex search. C-M-s is a forward regex search. C-M-t transposes sexps. C-M-u goes back a level of parentheses. C-M-v scrolls the next window.
+ 12. C-g sends a signal to 'quit'.
+ 13. 'yank' is a paste function. It can be invoked with C-y.
+ 14. Both are very similar, with different colors. ls adds single quotes around the first entry. Emacs is interactive.

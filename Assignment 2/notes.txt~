@@ -1,0 +1,10 @@
+2.1:
+  The result of 2^3^4 does not fit in a 64-bit integer.
+  Running C-h k C-h k runs the describe command on the keysequence C-h k, which is the describe command keybinding.
+  Running C-h k M-SPC runs the describe command on the keysequence M-SPC, which is the keybinding for the command that deletes all but one space around text.
+  The general command is cycle-spacing, which cylces through deleting all but one space, deleting all spaces, and revering back to the way it was.
+
+HW:
+  Running with python 2 gives an error that the list index is out of range. This is because the file is empty.
+  Running with python 3 gives a syntax error. The file was meant to run with python 2 and is incompatible.
+  

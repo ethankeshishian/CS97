@@ -1,0 +1,2 @@
+cd ~/tz
+git diff HEAD^!

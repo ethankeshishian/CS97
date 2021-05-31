@@ -1,0 +1,1 @@
+tr -cs '[A-Z]?[a-z]*[\-]?[a-z]*' '[\n*]' | sort -u | comm -23 - sorted.words

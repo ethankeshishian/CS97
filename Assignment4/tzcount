@@ -1,0 +1,5 @@
+#!/bin/sh
+
+input=$(cat)
+regex='[-+][0-1][0-9][03]0'
+echo "$input" | grep "^Date: " | grep -o $regex | sort -n | uniq -c |  sed "s/\([0-9]*\) \($regex*\)/\2 \1/" | grep -o "$regex [0-9]*"

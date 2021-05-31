@@ -1,0 +1,11 @@
+First, I ran the following command from the tz directory to determine where in the repo the sentence was located:
+  grep -rnw "." -e "Even newspaper reports present contradictory information."
+This searched the entire repo's contents for the line and printed the following line:
+  ./tz/northamerica:890:# and wrote "Even newspaper reports present contradictory information."
+This indicated the sentence is at line 890 in the "northamerica" file.
+Then, I used the following command to determine who added the line and other information:
+  git blame northamerica | grep "Even newspaper reports present contradictory information."
+This used "git blame" to find information about the file line by line, then grep to return the desired line:
+  c8f960ec (Paul Eggert        2013-09-02 08:09:06 -0700  890) # and wrote "Even newspaper reports present contradictory information."
+We can see the line was introduced by Paul Eggert on 2013-09-02 at 08:09:06 from the -0700 timezone.
+We can also see other information, like which commit the line was introduced with.

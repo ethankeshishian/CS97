@@ -1,0 +1,7 @@
+The file was introduced by Paul Eggert on 2013-09-02 at 08:09:06 from the -0700 timezone.
+I used the following command to determine where in the repo the sentence was located:
+  grep -rnw "." -e "Even newspaper reports present contradictory information."
+I then used this command to determine who added the line and other information:
+  git blame northamerica | grep "Even newspaper reports present contradictory information."
+  This returned the following line, providing the information:
+  c8f960ec (Paul Eggert        2013-09-02 08:09:06 -0700  890) # and wrote "Even newspaper reports present contradictory information."

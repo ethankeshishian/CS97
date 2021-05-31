@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/tz
+git diff $1 $2

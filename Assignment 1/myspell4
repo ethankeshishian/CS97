@@ -1,0 +1,1 @@
+tr -cs "[:alnum:].,&!'/-" "[\n*]" | sort -u | comm -23 - sorted.words

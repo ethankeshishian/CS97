@@ -1,0 +1,33 @@
+Installation:
+* I already had Node.js installed. I created a new app with the command:
+  npx create-react-app tic-tac-toe
+* I cleared out the src/ folder with the VS Code GUI.
+* I copied over the started code into two new files.
+* I used "npm start" then went to http://localhost:3000 to see the project.
+
+Building the game:
+* I followed the instructions, copying code by manually typing. 
+* After each change, I made sure to understand what the changes were doing.
+* First, I moved the state logic of Square to Board.
+* I defined the handleClick() function.
+* I followed a link to "Optimizing Performance" and did some more reading.
+* I changed Square to a function component.
+* I added turn logic, and updated the status text.
+* Finally, I added logic to determine a winner. I did this by:
+  adding a calculateWinner() function, and
+  updating the handleClick() and render() methods
+* The first part of the game was finished, and worked when I tested it.
+* I played the game for a while before moving on to time travel...
+
+Time travel:
+* I lifted the state up again to Game, then added the history array.
+* To lift state, I removed Board's constructor and gave it props.
+* I also moved the handleClick() method to Game.
+* I added buttons to show past moves. They appear number of moves increase.
+* I added key={move} to the list of buttons to remove a React warning.
+* I also added a stepNumber variable to Game's state, and a jumpTo() method.
+* jumpTo() takes the game back in time.
+* I modifed the handleClick() method to work with this and allow time travel.
+* I added const current to render() to render the correct move.
+* The game wasn't working. I looked through my code and found a missing line.
+* The game was now fully finished, and worked correctly.
